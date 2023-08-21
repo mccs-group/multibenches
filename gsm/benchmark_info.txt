@@ -1,0 +1,78 @@
+build:
+    -O2 -DSASR -DSTUPID_COMPILER -DNeedFunctionPrototypes=1 -w -I./include src/*.c
+
+run:
+    -ps -c 1.au > out
+
+bench_repeats:
+    5
+
+functions:
+    gsm_add
+    gsm_sub
+    gsm_mult
+    gsm_mult_r
+    gsm_abs
+    gsm_L_mult
+    gsm_L_add
+    gsm_L_sub
+    gsm_norm
+    gsm_L_asl
+    gsm_asl
+    gsm_L_asr
+    gsm_asr
+    gsm_div
+    Gsm_Coder
+    gsm_debug_words
+    gsm_debug_longwords
+    gsm_debug_longword
+    gsm_debug_word
+    Gsm_Decoder
+    gsm_create
+    gsm_decode
+    gsm_destroy
+    gsm_encode
+    gsm_explode
+    gsm_implode
+    gsm_option
+    gsm_print
+    Gsm_Long_Term_Predictor
+    Gsm_Long_Term_Synthesis_Filtering
+    main
+    Gsm_LPC_Analysis
+    Gsm_Preprocess
+    APCM_inverse_quantization
+    APCM_quantization_xmaxc_to_exp_mant
+    RPE_grid_positioning
+    Gsm_RPE_Encoding
+    Gsm_RPE_Decoding
+    Decoding_of_the_coded_Log_Area_Ratios
+    Coefficients_0_12
+    Coefficients_27_39
+    LARp_to_rp
+    Short_term_analysis_filtering
+    Short_term_synthesis_filtering
+    Gsm_Short_Term_Analysis_Filter
+    Gsm_Short_Term_Synthesis_Filter
+    alaw_input
+    alaw_output
+    get_u32
+    put_u32
+    audio_init_input
+    audio_init_output
+    generic_init
+    onintr
+    process_encode
+    process_decode
+    suffix
+    set_format
+    emalloc
+    normalname
+    codename
+    plainname
+    process
+    main1
+    linear_input
+    linear_output
+    ulaw_input
+    ulaw_output
