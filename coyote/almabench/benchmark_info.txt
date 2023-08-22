@@ -1,0 +1,11 @@
+build:
+    almabench.c -lm
+
+bench_repeats:
+    2
+
+functions:
+    anpm
+    planetpv
+    radecdist
+    main

@@ -1,0 +1,8 @@
+build:
+    huffbench.c
+
+functions:
+    heap_adjust
+    generate_test_data
+    compdecomp
+    main

@@ -1,0 +1,12 @@
+build:
+    lpbench.c
+
+functions:
+    idamax
+    matgen
+    idamax
+    dscal
+    daxpy
+    dgefa
+    dgesl
+    main

@@ -1,0 +1,17 @@
+build:
+    fftbench.cpp -lm -lstdc++
+
+functions:
+    _ZL13random_doublev
+    _ZN10polynomialIdED1Ev
+    _ZN10polynomialIdED0Ev
+    _ZN10polynomialISt7complexIdEED1Ev
+    _ZN10polynomialISt7complexIdEED0Ev
+    _ZN10polynomialIdEC1ERKS0_
+    _ZN10polynomialIdE7stretchEm
+    _ZN10polynomialIdE11stretch_fftEv
+    _ZN10polynomialIdE3fftERKS0_
+    _ZN10polynomialIdE11inverse_fftERKS_ISt7complexIdEE
+    _ZNK10polynomialIdEmlERKS0_
+    main
+    _GLOBAL__sub_I_main
