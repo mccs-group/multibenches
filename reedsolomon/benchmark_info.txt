@@ -1,0 +1,10 @@
+build:
+    reedsolomon.c -w
+
+functions:
+    generate_gf
+    gen_poly
+    decode_rs
+    rsdec_204
+    rsenc_204
+    main

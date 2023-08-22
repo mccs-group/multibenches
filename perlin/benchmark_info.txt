@@ -1,0 +1,5 @@
+build:
+    perlin.c -w
+
+functions:
+    main
