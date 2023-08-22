@@ -1,0 +1,8 @@
+build:
+    smallpt.cpp -lstdc++ -lm -w
+    
+functions:
+    _ZN3Vec4normEv
+    _Z8radianceRK3RayiPt
+    main
+    _GLOBAL__sub_I_spheres

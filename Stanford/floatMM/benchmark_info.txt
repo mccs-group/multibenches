@@ -1,0 +1,10 @@
+build:
+    FloatMM.c
+
+functions:
+    Initrand
+    Rand
+    rInitmatrix
+    rInnerproduct
+    Mm
+    main

@@ -1,0 +1,53 @@
+build:
+    src/*.c -I./include -lm
+
+run:
+    -a -q -o out.au < 1.txt
+
+functions:
+    aufile_term
+    aufile_write
+    au_header
+    file_init
+    darray_free
+    Darray_find
+    darray_delete
+    init_synth
+    dict_find
+    dict_init
+    dict_term
+    getargs
+    interpolate
+    holmes
+    init_holmes
+    term_holmes
+    audio_init
+    audio_term
+    audio_play
+    setabc
+    DBtoLIN
+    overload_warning
+    show_parms
+    parwave
+    parwave_init
+    enter
+    phone_append
+    phone_to_elm
+    suspect_word
+    say_phones
+    xlate_string
+    spell_out
+    xlate_word
+    concat_args
+    say_string
+    darray_fget
+    say_file
+    main
+    xlate_cardinal
+    xlate_ordinal
+    isvowel
+    isvowel
+    isconsonant
+    NRL
+    trie_insert
+    trie_lookup

@@ -1,0 +1,12 @@
+build:
+    Bubblesort.c
+
+bench_repeats:
+    3
+
+functions:
+    Initrand
+    Rand
+    bInitarr
+    Bubble
+    main
