@@ -1,11 +1,14 @@
 build:
-    -O2 -DSASR -DSTUPID_COMPILER -DNeedFunctionPrototypes=1 -w -I./include src/*.c
+    -DSASR -DSTUPID_COMPILER -DNeedFunctionPrototypes=1 -w -I./include src/*.c
 
 run:
-    -ps -c 1.au > out
+    -ps -c 1.au > out.gsm
+
+run:
+    -pcd -c compressed.gsm > out.au
 
 bench_repeats:
-    5
+    2
 
 functions:
     gsm_add
