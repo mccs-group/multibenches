@@ -1,0 +1,13 @@
+build:
+    -xc++ genprog.c -I./include -w
+
+bench_repeats:
+    3
+
+functions:
+    _ZL6func_4l
+    _ZL7func_33a
+    _ZL7func_12a
+    _ZL6func_8jt
+    _ZL6func_1v
+    main
