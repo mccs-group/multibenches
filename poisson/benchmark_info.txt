@@ -2,10 +2,7 @@ build:
     poisson.c -w -lm
 
 functions:
-    fflop
-    mflops
     set_param
-    newMat
     clearMat
     mat_set
     mat_set_init

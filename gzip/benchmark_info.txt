@@ -1,5 +1,4 @@
 build:
-    -Wl,--as-needed -DHAVE_CONFIG_H src/openat-proc.c src/basename-lgpl.c src/chdir-long.c src/cloexec.c src/opendir-safer.c src/dirname-lgpl.c src/stripslash.c src/exitfail.c src/fclose.c src/fcntl.c src/creat-safer.c src/open-safer.c src/fd-hook.c src/fd-safer-flag.c src/dup-safer-flag.c src/fflush.c src/filenamecat-lgpl.c src/fpurge.c src/freading.c src/free.c src/fseek.c src/fseeko.c src/fseterr.c src/getprogname.c src/gettime.c src/ialloc.c src/lock.c src/malloca.c src/math.c src/openat-die.c src/openat-safer.c src/printf-frexp.c src/printf-frexpl.c src/save-cwd.c src/savedir.c src/sig-handler.c src/stat-time.c src/threadlib.c src/timespec.c src/unistd.c src/dup-safer.c src/fd-safer.c src/pipe-safer.c src/utimens.c src/xmalloc.c src/xsize.c src/yesno.c src/asnprintf.c src/fprintf.c src/printf.c src/printf-args.c src/printf-parse.c src/strerror_r.c src/vasnprintf.c src/vfprintf.c src/bits.c src/deflate.c src/gzip.c src/inflate.c src/trees.c src/unlzh.c src/unlzw.c src/unpack.c src/unzip.c src/util.c src/zip.c src/version.c -I./include
 
 run:
     -fk -1 binutils-2.28.tar -c > 1.tar.gz
@@ -21,105 +20,55 @@ functions:
     cdb_advance_fd
     chdir_long
     set_cloexec_flag
-    dup_cloexec
     opendir_safer
     dir_len
     mdir_name
     strip_trailing_slashes
     rpl_fclose
     rpl_fcntl
-    creat_safer
     open_safer
     fd_safer_flag
-    dup_safer_flag
     rpl_fflush
     mfile_name_concat
-    fpurge
-    rpl_free
-    rpl_fseek
-    rpl_fseeko
-    fseterr
-    getprogname
-    gettime
-    current_timespec
-    _gl_alloc_nomem
-    imalloc
-    irealloc
-    icalloc
-    ireallocarray
     glthread_rwlock_init_for_glibc
     glthread_recursive_lock_init_multithreaded
     glthread_once_singlethreaded
     mmalloca
     freea
-    openat_save_fail
-    openat_restore_fail
     openat_safer
     printf_frexp
     printf_frexpl
     save_cwd
     restore_cwd
     free_cwd
-    direntry_cmp_name
     streamsavedir
     savedir
-    get_handler
-    get_stat_atime_ns
-    get_stat_ctime_ns
-    get_stat_mtime_ns
-    get_stat_birthtime_ns
-    get_stat_atime
-    get_stat_ctime
-    get_stat_mtime
-    get_stat_birthtime
-    stat_time_normalize
-    make_timespec
-    timespec_cmp
-    timespec_sign
-    timespectod
-    dup_safer
     fd_safer
     pipe_safer
     update_timespec
     validate_timespec
-    fdutimens
-    utimens
-    lutimens
     xmalloc
-    ximalloc
     xcharalloc
     xrealloc
-    xirealloc
     xreallocarray
-    xnrealloc
-    xireallocarray
-    xnmalloc
-    xinmalloc
     x2nrealloc
-    x2realloc
     xpalloc
     xzalloc
     xizalloc
     xcalloc
-    xicalloc
     xmemdup
     ximemdup
     ximemdup0
-    xstrdup
     xsum
     xsum3
     xsum4
-    xmax
     yesno
-    asnprintf
     rpl_fprintf
     *rpl_printf
     printf_fetchargs
     printf_parse
     rpl_strerror_r
-    vasnprintf
     rpl_vfprintf
-    bi_init
     send_bits
     bi_reverse
     bi_windup
@@ -128,10 +77,7 @@ functions:
     rsync_roll
     fill_window
     deflate
-    license
     remove_output_file
-    abort_gzip_signal
-    progerror
     atdir_eq
     atdir_set
     discard_input_bytes
@@ -140,7 +86,6 @@ functions:
     do_list
     do_exit
     finish_out
-    try_help
     get_input_size_and_time
     input_eof
     treat_stdin
@@ -148,7 +93,6 @@ functions:
     treat_file
     treat_file
     main
-    abort_gzip
     inflate_codes
     huft_build
     inflate_dynamic
@@ -174,18 +118,11 @@ functions:
     check_zipfile
     unzip
     updcrc
-    getcrc
-    clear_bufs
     read_buffer
     strlwr
-    gzip_base_name
-    xunlink
     add_envopt
-    gzip_error
-    xalloc_die
     warning
     read_error
-    write_error
     write_buf
     write_buf
     copy

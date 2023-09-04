@@ -1,87 +1,49 @@
 build:
     src/debug.c src/entropy_common.c src/error_private.c src/fse_decompress.c src/pool.c src/threading.c src/xxhash.c src/zstd_common.c src/fse_compress.c src/hist.c src/huf_compress.c src/zstd_compress.c src/zstd_compress_literals.c src/zstd_compress_sequences.c src/zstd_compress_superblock.c src/zstd_double_fast.c src/zstd_fast.c src/zstd_lazy.c src/zstd_ldm.c src/zstd_opt.c src/zstdmt_compress.c src/huf_decompress.c src/huf_decompress_amd64.S src/zstd_ddict.c src/zstd_decompress.c src/zstd_decompress_block.c src/zstdcli.c src/util.c src/timefn.c src/fileio.c src/fileio_asyncio.c -DXXH_NAMESPACE=ZSTD_ -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=5 -z noexecstack -DZSTD_NOBENCH -DZSTD_NODICT -DZSTD_NOTRACE -UZSTD_LEGACY_SUPPORT -DZSTD_LEGACY_SUPPORT=0 -I./include
 
-bench_repeats:
-    5
+run:
+    -3 binutils-2.28.tar -fo 3out.zst
 
 run:
-    -3 pg_main.elf -fo 3out.zst
+    -7 binutils-2.28.tar -fo 7out.zst
 
 run:
-    -7 pg_main.elf -fo 7out.zst
+    -10 binutils-2.28.tar -fo 10out.zst
 
 run:
-    -10 pg_main.elf -fo 10out.zst
+    -14 binutils-2.28.tar -fo 14out.zst
 
 run:
-    -14 pg_main.elf -fo 14out.zst
+    -19 binutils-2.28.tar -fo 19out.zst
 
 run:
-    -19 pg_main.elf -fo 19out.zst
+    -1 binutils-2.28.tar -fo 1out.zst
 
 run:
-    -1 pg_main.elf -fo 1out.zst
+    --fast binutils-2.28.tar -fo 0out.zst
 
 run:
-    --fast pg_main.elf -fo 0out.zst
-
-run:
-    --ultra -22 pg_main.elf -fo 22out.zst
+    --ultra -22 binutils-2.28.tar -fo 22out.zst
 
 run:
     -fd *.zst
 
 functions:
-    HUF_readStats_body_default
-    FSE_readNCount_body_default
-    FSE_versionNumber
-    FSE_isError
     FSE_getErrorName
-    HUF_isError
-    HUF_getErrorName
-    FSE_readNCount_bmi2
-    FSE_readNCount
-    HUF_readStats
-    HUF_readStats_wksp
     ERR_getErrorString
     FSE_buildDTable_internal
-    FSE_buildDTable_wksp
     FSE_decompress_wksp_bmi2
-    POOL_create
-    POOL_create_advanced
-    POOL_free
-    POOL_joinJobs
-    POOL_resize
-    POOL_add
-    POOL_tryAdd
     POOL_sizeof
     XXH32_finalize
     XXH64_finalize
-    ZSTD_XXH_versionNumber
     ZSTD_XXH32
-    ZSTD_XXH32_createState
-    ZSTD_XXH32_freeState
-    ZSTD_XXH32_copyState
-    ZSTD_XXH32_reset
     ZSTD_XXH32_update
     ZSTD_XXH32_digest
-    ZSTD_XXH32_canonicalFromHash
-    ZSTD_XXH32_hashFromCanonical
     ZSTD_XXH64
-    ZSTD_XXH64_createState
-    ZSTD_XXH64_freeState
-    ZSTD_XXH64_copyState
-    ZSTD_XXH64_reset
     ZSTD_XXH64_update
     ZSTD_XXH64_digest
-    ZSTD_XXH64_canonicalFromHash
-    ZSTD_XXH64_hashFromCanonical
-    ZSTD_versionNumber
-    ZSTD_versionString
-    ZSTD_isError
     ZSTD_getErrorName
     ZSTD_getErrorCode
-    ZSTD_getErrorString
     FSE_writeNCount_generic
     FSE_compress_usingCTable_generic
     FSE_buildCTable_wksp
@@ -90,41 +52,22 @@ functions:
     FSE_optimalTableLog_internal
     FSE_optimalTableLog
     FSE_normalizeCount
-    FSE_buildCTable_rle
     FSE_compress_usingCTable
-    FSE_compressBound
-    HIST_count_parallel_wksp
-    HIST_isError
-    HIST_count_simple
-    HIST_countFast_wksp
-    HIST_count_wksp
-    HIST_countFast
-    HIST_count
     HUF_simpleQuickSort
-    HUF_compress1X_usingCTable_internal
-    HUF_compress4X_usingCTable_internal
     HUF_compressCTable_internal
     HUF_writeCTable_wksp
     HUF_readCTable
-    HUF_getNbBitsFromCTable
     HUF_buildCTable_wksp
     HUF_estimateCompressedSize
     HUF_validateCTable
-    HUF_compressBound
-    HUF_compress1X_usingCTable
-    HUF_compress4X_usingCTable
     HUF_cardinality
-    HUF_minTableLog
     HUF_optimalTableLog
     HUF_compress_internal
-    HUF_compress1X_repeat
-    HUF_compress4X_repeat
     ZSTD_overrideCParams
     ZSTD_deriveSeqStoreChunk
     ZSTD_writeFrameHeader
     ZSTD_adjustCParams_internal
     ZSTD_getCParams_internal
-    ZSTD_getParams_internal
     ZSTD_isRLE
     ZSTD_safecopyLiterals
     ZSTD_resolveRowMatchFinderMode
@@ -147,17 +90,12 @@ functions:
     ZSTD_compressBound
     ZSTD_initStaticCCtx
     ZSTD_sizeof_CCtx
-    ZSTD_sizeof_CStream
-    ZSTD_getSeqStore
-    ZSTD_createCCtxParams
     ZSTD_freeCCtxParams
     ZSTD_CCtxParams_reset
     ZSTD_CCtxParams_init
-    ZSTD_cParam_getBounds
     ZSTD_CCtxParams_setParameter
     ZSTD_CCtx_setParameter
     ZSTD_CCtxParams_getParameter
-    ZSTD_CCtx_getParameter
     ZSTD_CCtx_setParametersUsingCCtxParams
     ZSTD_CCtx_setFParams
     ZSTD_CCtx_setPledgedSrcSize
@@ -166,7 +104,6 @@ functions:
     ZSTD_CCtxParams_init_advanced
     ZSTD_CCtx_setCParams
     ZSTD_CCtx_setParams
-    ZSTD_cycleLog
     ZSTD_adjustCParams
     ZSTD_getCParamsFromCCtxParams
     ZSTD_estimateCStreamSize_usingCCtxParams
@@ -177,88 +114,48 @@ functions:
     ZSTD_estimateCStreamSize_usingCParams
     ZSTD_estimateCStreamSize
     ZSTD_getFrameProgression
-    ZSTD_toFlushNow
-    ZSTD_reset_compressedBlockState
-    ZSTD_invalidateRepCodes
     ZSTD_copyCCtx
     ZSTD_seqToCodes
     ZSTD_buildSequencesStatistics
     ZSTD_compressBlock_internal
     ZSTD_compressSeqStore_singleBlock
     ZSTD_selectBlockCompressor
-    ZSTD_resetSeqStore
-    ZSTD_sequenceBound
     ZSTD_mergeBlockDelimiters
     ZSTD_buildBlockEntropyStats
     ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize
     ZSTD_deriveBlockSplitsHelper
-    ZSTD_compressContinue_internal
     ZSTD_writeSkippableFrame
     ZSTD_writeLastEmptyBlock
-    ZSTD_referenceExternalSequences
-    ZSTD_compressContinue_public
-    ZSTD_compressContinue
     ZSTD_getBlockSize
     ZSTD_compressBlock_deprecated
     ZSTD_compressBlock
     ZSTD_loadCEntropy
     ZSTD_compress_insertDictionary
-    ZSTD_compressBegin_internal
-    ZSTD_compressBegin_usingDict_deprecated
-    ZSTD_compressBegin_usingCDict_internal
     ZSTD_initCDict_internal
-    ZSTD_compressBegin_advanced_internal
-    ZSTD_compressBegin_advanced
-    ZSTD_compressBegin_usingDict
-    ZSTD_compressBegin
     ZSTD_CCtx_trace
-    ZSTD_compressEnd_public
-    ZSTD_compressEnd
     ZSTD_compress_advanced_internal
     ZSTD_compress_advanced
     ZSTD_compress_usingDict
-    ZSTD_compressCCtx
-    ZSTD_estimateCDictSize_advanced
-    ZSTD_estimateCDictSize
     ZSTD_sizeof_CDict
     ZSTD_freeCDict
     ZSTD_clearAllDicts
     ZSTD_freeCCtx
-    ZSTD_CCtx_loadDictionary_advanced
-    ZSTD_CCtx_loadDictionary_byReference
-    ZSTD_CCtx_loadDictionary
     ZSTD_CCtx_refCDict
     ZSTD_CCtx_refPrefix_advanced
     ZSTD_CCtx_reset
     ZSTD_CCtx_reset
-    ZSTD_createCCtx_advanced
-    ZSTD_createCCtx
     ZSTD_CCtx_refPrefix
     ZSTD_compress
-    ZSTD_createCDict_advanced2
-    ZSTD_createCDict_advanced
     ZSTD_createCDict
     ZSTD_createCDict_byReference
     ZSTD_CCtx_init_compressStream2
     ZSTD_compressStream2
     ZSTD_initStaticCDict
-    ZSTD_getCParamsFromCDict
     ZSTD_getDictID_fromCDict
-    ZSTD_compressBegin_usingCDict_advanced
-    ZSTD_compressBegin_usingCDict_deprecated
-    ZSTD_compressBegin_usingCDict
     ZSTD_compress_usingCDict_advanced
     ZSTD_compress_usingCDict
-    ZSTD_createCStream
-    ZSTD_initStaticCStream
-    ZSTD_createCStream_advanced
-    ZSTD_freeCStream
-    ZSTD_CStreamInSize
-    ZSTD_CStreamOutSize
     ZSTD_resetCStream
     ZSTD_initCStream_internal
-    ZSTD_initCStream_usingCDict_advanced
-    ZSTD_initCStream_usingCDict
     ZSTD_initCStream_advanced
     ZSTD_initCStream_usingDict
     ZSTD_initCStream_srcSize
@@ -271,9 +168,6 @@ functions:
     ZSTD_compressSequences
     ZSTD_flushStream
     ZSTD_endStream
-    ZSTD_maxCLevel
-    ZSTD_minCLevel
-    ZSTD_defaultCLevel
     ZSTD_getCParams
     ZSTD_getParams
     ZSTD_registerSequenceProducer
@@ -432,13 +326,6 @@ functions:
     ZSTD_btGetAllMatches_dictMatchState_5
     ZSTD_btGetAllMatches_dictMatchState_3
     ZSTD_updateTree
-    ZSTD_compressBlock_btopt
-    ZSTD_compressBlock_btultra
-    ZSTD_compressBlock_btultra2
-    ZSTD_compressBlock_btopt_dictMatchState
-    ZSTD_compressBlock_btopt_extDict
-    ZSTD_compressBlock_btultra_dictMatchState
-    ZSTD_compressBlock_btultra_extDict
     ZSTDMT_releaseBuffer
     ZSTDMT_releaseAllJobResources
     ZSTDMT_freeCCtxPool
@@ -448,16 +335,13 @@ functions:
     ZSTDMT_freeBufferPool
     ZSTDMT_expandBufferPool
     ZSTDMT_compressionJob
-    ZSTDMT_createCCtx_advanced
     ZSTDMT_freeCCtx
     ZSTDMT_sizeof_CCtx
-    ZSTDMT_updateCParams_whileCompressing
     ZSTDMT_getFrameProgression
     ZSTDMT_toFlushNow
     ZSTDMT_initCStream_internal
     ZSTDMT_nextInputSizeHint
     ZSTDMT_compressStream_generic
-    BIT_reloadDStream_internal
     HUF_fillDTableX2ForWeight
     HUF_DecompressFastArgs_init
     HUF_decompress1X1_usingDTable_internal
@@ -474,47 +358,32 @@ functions:
     HUF_decompress4X_usingDTable
     HUF_decompress4X_hufOnly_wksp
     ZSTD_initDDict_internal
-    ZSTD_DDict_dictContent
-    ZSTD_DDict_dictSize
     ZSTD_copyDDictParameters
     ZSTD_initStaticDDict
     ZSTD_freeDDict
-    ZSTD_createDDict_advanced
-    ZSTD_createDDict
-    ZSTD_createDDict_byReference
     ZSTD_estimateDDictSize
     ZSTD_sizeof_DDict
     ZSTD_getDictID_fromDDict
     ZSTD_frameHeaderSize_internal
-    ZSTD_createDCtx_internal
     ZSTD_DDictHashSet_emplaceDDict
     ZSTD_getDDict
     ZSTD_DCtx_trace_end
     ZSTD_DCtx_selectFrameDDict
     ZSTD_freeDCtx
     ZSTD_sizeof_DCtx
-    ZSTD_estimateDCtxSize
     ZSTD_initStaticDCtx
-    ZSTD_createDCtx_advanced
-    ZSTD_createDCtx
     ZSTD_freeDCtx
-    ZSTD_copyDCtx
     ZSTD_isFrame
     ZSTD_isSkippableFrame
     ZSTD_frameHeaderSize
-    ZSTD_getFrameHeader_advanced
     ZSTD_decodeFrameHeader
     ZSTD_findFrameSizeInfo
-    ZSTD_getFrameHeader
     ZSTD_getFrameContentSize
     ZSTD_readSkippableFrame
     ZSTD_findDecompressedSize
     ZSTD_getDecompressedSize
-    ZSTD_findFrameCompressedSize
     ZSTD_decompressBound
     ZSTD_decompressionMargin
-    ZSTD_insertBlock
-    ZSTD_nextSrcSizeToDecompress
     ZSTD_nextInputType
     ZSTD_decompressContinue
     ZSTD_decompressContinueStream
@@ -523,21 +392,10 @@ functions:
     ZSTD_decompressBegin_usingDict
     ZSTD_decompressBegin_usingDDict
     ZSTD_decompressMultiFrame
-    ZSTD_decompress_usingDict
-    ZSTD_decompressDCtx
     ZSTD_decompress
     ZSTD_getDictID_fromDict
     ZSTD_getDictID_fromFrame
-    ZSTD_decompress_usingDDict
-    ZSTD_createDStream
-    ZSTD_initStaticDStream
-    ZSTD_createDStream_advanced
     ZSTD_freeDStream
-    ZSTD_DStreamInSize
-    ZSTD_DStreamOutSize
-    ZSTD_DCtx_loadDictionary_advanced
-    ZSTD_DCtx_loadDictionary_byReference
-    ZSTD_DCtx_loadDictionary
     ZSTD_DCtx_refPrefix_advanced
     ZSTD_DCtx_refPrefix
     ZSTD_initDStream_usingDict
@@ -546,7 +404,6 @@ functions:
     ZSTD_DCtx_refDDict
     ZSTD_initDStream_usingDDict
     ZSTD_DCtx_setMaxWindowSize
-    ZSTD_dParam_getBounds
     ZSTD_dParam_withinBounds
     ZSTD_DCtx_setFormat
     ZSTD_DCtx_getParameter
@@ -557,26 +414,18 @@ functions:
     ZSTD_estimateDStreamSize
     ZSTD_estimateDStreamSize_fromFrame
     ZSTD_decompressStream
-    ZSTD_decompressStream_simpleArgs
     ZSTD_safecopy
     ZSTD_execSequenceEnd
     ZSTD_safecopyDstBeforeSrc
     ZSTD_execSequenceEndSplitLitBuffer
     ZSTD_allocateLiteralsBuffer
     ZSTD_decodeLiteralsBlock
-    ZSTD_buildFSETable_body_default
     ZSTD_buildSeqTable
     ZSTD_initFseState
     ZSTD_decompressSequencesLong_default
     ZSTD_getcBlockSize
-    ZSTD_decodeLiteralsBlock_wrapper
-    ZSTD_buildFSETable
     ZSTD_decodeSeqHeaders
-    ZSTD_decompressBlock_internal
-    ZSTD_decompressBlock_internal
     ZSTD_checkContinuity
-    ZSTD_decompressBlock_deprecated
-    ZSTD_decompressBlock
     readU32FromCharChecked
     errorOut
     readIntFromChar
@@ -584,9 +433,6 @@ functions:
     readU32FromChar
     exeNameMatch
     longCommandWArg
-    usage
-    usage_advanced
-    badusage
     printVersion
     main
     mallocAndJoin2Dir
@@ -594,44 +440,30 @@ functions:
     makeDir
     trimLeadingCurrentDirConst
     trimPath
-    compareDir
     UTIL_assembleFileNamesTable2
     getTotalTableSize
     convertPathnameToDirName
-    UTIL_freeFileNamesTable
     UTIL_requireUserConfirmation
-    UTIL_traceFileStat
     UTIL_fstat
-    UTIL_stat
     UTIL_isRegularFile
-    UTIL_isRegularFileStat
     UTIL_fchmod
-    UTIL_chmod
     UTIL_utime
     UTIL_setFDStat
-    UTIL_setFileStat
     UTIL_isDirectoryStat
     UTIL_isDirectory
     mirrorSrcDir
-    UTIL_compareStr
     UTIL_isSameFileStat
     UTIL_isSameFile
     UTIL_isFIFO
-    UTIL_isFIFOStat
-    UTIL_isBlockDevStat
     UTIL_isLink
     UTIL_prepareFileList
     UTIL_isConsole
-    UTIL_fakeStdinIsConsole
-    UTIL_fakeStdoutIsConsole
-    UTIL_fakeStderrIsConsole
     UTIL_getFileSize
     UTIL_getFileSizeStat
     UTIL_makeHumanReadableSize
     UTIL_getTotalFileSize
     UTIL_assembleFileNamesTable
     UTIL_createFileNamesTable_fromFileName
-    UTIL_freeFileNamesTable
     UTIL_allocateFileNamesTable
     UTIL_searchFileNamesTable
     UTIL_refFilename
@@ -644,15 +476,8 @@ functions:
     UTIL_expandFNT
     UTIL_createFNT_fromROTable
     UTIL_countCores
-    UTIL_countPhysicalCores
-    UTIL_countLogicalCores
     UTIL_getTime
-    UTIL_getSpanTimeNano
-    UTIL_getSpanTimeMicro
-    UTIL_clockSpanMicro
-    UTIL_clockSpanNano
     UTIL_waitForNextTick
-    UTIL_support_MT_measurements
     ABRThandler
     FIO_openSrcFile
     INThandler
@@ -667,7 +492,6 @@ functions:
     FIO_removeFile
     FIO_openDstFile
     FIO_freeDict
-    FIO_freeCResources
     FIO_freeDResources
     FIO_passThrough
     FIO_decompressSrcFile
@@ -676,63 +500,24 @@ functions:
     FIO_createCResources
     FIO_multiFilesConcatWarning
     FIO_shouldDisplayMultipleFileSummary
-    FIO_compressFilename_srcFile
-    FIO_zlibVersion
-    FIO_lz4Version
-    FIO_lzmaVersion
-    FIO_addAbortHandler
     FIO_createPreferences
     FIO_createContext
-    FIO_freePreferences
-    FIO_freeContext
-    FIO_setNotificationLevel
-    FIO_setProgressSetting
-    FIO_setCompressionType
-    FIO_overwriteMode
-    FIO_setSparseWrite
-    FIO_setDictIDFlag
-    FIO_setChecksumFlag
-    FIO_setRemoveSrcFile
-    FIO_setMemLimit
     FIO_setNbWorkers
-    FIO_setExcludeCompressedFile
-    FIO_setAllowBlockDevices
     FIO_setBlockSize
     FIO_setOverlapLog
     FIO_setAdaptiveMode
-    FIO_setUseRowMatchFinder
     FIO_setRsyncable
-    FIO_setStreamSrcSize
-    FIO_setTargetCBlockSize
-    FIO_setSrcSizeHint
-    FIO_setTestMode
-    FIO_setLiteralCompressionMode
     FIO_setAdaptMin
-    FIO_setAdaptMax
-    FIO_setLdmFlag
-    FIO_setLdmHashLog
-    FIO_setLdmMinMatch
-    FIO_setLdmBucketSizeLog
-    FIO_setLdmHashRateLog
-    FIO_setPatchFromMode
-    FIO_setContentSize
     FIO_setAsyncIOFlag
-    FIO_setPassThroughFlag
-    FIO_setMMapDict
-    FIO_setHasStdoutOutput
-    FIO_setNbFilesTotal
     FIO_determineHasStdinInput
     FIO_checkFilenameCollisions
     FIO_displayCompressionParameters
-    FIO_compressFilename
     FIO_compressMultipleFilenames
-    FIO_decompressFilename
     FIO_decompressMultipleFilenames
     FIO_listMultipleFiles
     AIO_IOPool_enqueueJob
     AIO_IOPool_createIoJob
     AIO_IOPool_acquireJob
-    AIO_ReadPool_enqueueRead
     AIO_IOPool_releaseIoJob
     AIO_ReadPool_addJobToCompleted
     AIO_ReadPool_executeReadJob
@@ -741,23 +526,14 @@ functions:
     AIO_WritePool_executeWriteJob
     AIO_IOPool_createThreadPool
     AIO_IOPool_destroy
-    AIO_supported
-    AIO_WritePool_acquireJob
-    AIO_WritePool_enqueueAndReacquireWriteJob
     AIO_WritePool_sparseWriteEnd
     AIO_WritePool_setFile
-    AIO_WritePool_getFile
     AIO_WritePool_releaseIoJob
     AIO_WritePool_closeFile
     AIO_WritePool_create
     AIO_WritePool_free
-    AIO_WritePool_setAsync
     AIO_ReadPool_setFile
     AIO_ReadPool_create
     AIO_ReadPool_consumeBytes
     AIO_ReadPool_fillBuffer
-    AIO_ReadPool_consumeAndRefill
-    AIO_ReadPool_getFile
-    AIO_ReadPool_closeFile
     AIO_ReadPool_free
-    AIO_ReadPool_setAsync

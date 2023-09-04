@@ -1,5 +1,5 @@
 build:
-    src/*.c -I./include -lm
+    src/*.c -I./include -lm -w
 
 run:
     -a -q -o out.au < 1.txt
@@ -13,9 +13,6 @@ functions:
     Darray_find
     darray_delete
     init_synth
-    dict_find
-    dict_init
-    dict_term
     getargs
     interpolate
     holmes
@@ -24,14 +21,11 @@ functions:
     audio_init
     audio_term
     audio_play
-    setabc
     DBtoLIN
     overload_warning
     show_parms
     parwave
-    parwave_init
     enter
-    phone_append
     phone_to_elm
     suspect_word
     say_phones

@@ -19,9 +19,6 @@ functions:
     hasSuffix
     configError
     cleanUpAndFail
-    mySignalCatcher
-    license
-    usage
     fileExists
     myfeof
     showFileNames

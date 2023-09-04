@@ -26,17 +26,10 @@ functions:
     gsm_asr
     gsm_div
     Gsm_Coder
-    gsm_debug_words
-    gsm_debug_longwords
-    gsm_debug_longword
-    gsm_debug_word
     Gsm_Decoder
     gsm_create
     gsm_decode
-    gsm_destroy
-    gsm_encode
     gsm_explode
-    gsm_implode
     gsm_option
     gsm_print
     Gsm_Long_Term_Predictor
@@ -45,10 +38,8 @@ functions:
     Gsm_LPC_Analysis
     Gsm_Preprocess
     APCM_inverse_quantization
-    APCM_quantization_xmaxc_to_exp_mant
     RPE_grid_positioning
     Gsm_RPE_Encoding
-    Gsm_RPE_Decoding
     Decoding_of_the_coded_Log_Area_Ratios
     Coefficients_0_12
     Coefficients_27_39
@@ -63,7 +54,6 @@ functions:
     put_u32
     audio_init_input
     audio_init_output
-    generic_init
     onintr
     process_encode
     process_decode
@@ -71,11 +61,7 @@ functions:
     set_format
     emalloc
     normalname
-    codename
-    plainname
     process
     main1
-    linear_input
-    linear_output
     ulaw_input
     ulaw_output

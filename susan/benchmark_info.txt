@@ -23,13 +23,11 @@ run:
     1.pgm out.pgm -e -n
 
 functions:
-    usage
     getint
     get_image
     put_image
     int_to_uchar
     setup_brightness_lut
-    free_brightness_lut
     susan_principle
     susan_principle_small
     median
