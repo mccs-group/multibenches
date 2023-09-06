@@ -1,5 +1,5 @@
 build:
-    -xc++ genprog.cc -I./include -w
+    genprog.cc -I./include -w
 
 bench_repeats:
     3
