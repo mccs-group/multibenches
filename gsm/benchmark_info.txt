@@ -7,9 +7,6 @@ run:
 run:
     -pcd -c compressed.gsm > out.au
 
-bench_repeats:
-    2
-
 functions:
     gsm_add
     gsm_sub
