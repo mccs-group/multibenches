@@ -21,4 +21,3 @@ functions:
     _ZN10polynomialIdE11inverse_fftERKS_ISt7complexIdEE
     _ZNK10polynomialIdEmlERKS0_
     main
-    _GLOBAL__sub_I_main
