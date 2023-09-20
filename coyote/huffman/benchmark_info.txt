@@ -1,6 +1,10 @@
 build:
     huffbench.c
 
+long_functions:
+    compdecomp
+    generate_test_data
+
 functions:
     heap_adjust
     generate_test_data

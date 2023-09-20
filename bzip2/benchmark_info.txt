@@ -10,6 +10,29 @@ run:
 bench_repeats:
     5
 
+long_functions:
+    BZ2_bzRead
+    BZ2_hbAssignCodes
+    fallbackSort
+    default_bzalloc
+    BZ2_bzReadOpen
+    BZ2_compressBlock
+    mainSort
+    BZ2_blockSort
+    BZ2_hbMakeCodeLengths
+    BZ2_decompress
+    main1
+    BZ2_bzDecompress
+    BZ2_indexIntoF
+    BZ2_bzReadClose
+    BZ2_bzReadGetUnused
+    BZ2_bzDecompressEnd
+    BZ2_bzDecompressInit
+    __do_global_dtors_aux
+    BZ2_hbCreateDecodeTables
+    uncompressStream
+    add_pair_to_block
+
 functions:
     fallbackSort
     mainGtU

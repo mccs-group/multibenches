@@ -1,6 +1,10 @@
 build:
     FloatMM.c
 
+long_functions:
+    Mm
+    rInitmatrix
+
 functions:
     rInitmatrix
     rInnerproduct

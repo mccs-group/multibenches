@@ -4,6 +4,11 @@ build:
 bench_repeats:
     2
 
+long_functions:
+    planetpv
+    radecdist
+    anpm
+
 functions:
     anpm
     planetpv

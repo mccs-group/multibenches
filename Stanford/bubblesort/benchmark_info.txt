@@ -4,6 +4,9 @@ build:
 bench_repeats:
     3
 
+long_functions:
+    Bubble
+
 functions:
     bInitarr
     Bubble

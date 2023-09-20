@@ -4,6 +4,17 @@ build:
 run:
     -a -q -o out.au < 1.txt
 
+long_functions:
+   audio_play
+   phone_to_elm
+   aufile_write
+   Darray_find
+   holmes
+   parwave
+   setabc
+   getargs
+   show_parms
+
 functions:
     aufile_term
     aufile_write

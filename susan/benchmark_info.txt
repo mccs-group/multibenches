@@ -22,6 +22,17 @@ run:
 run: 
     1.pgm out.pgm -e -n
 
+long_functions:
+    susan_corners
+    get_image
+    setup_brightness_lut
+    susan_smoothing
+    susan_edges_small
+    edge_draw
+    susan_corners_quick
+    susan_edges
+    susan_thin
+
 functions:
     getint
     get_image

@@ -13,6 +13,32 @@ run:
 run:
     -dfk 1.tar.gz 4.tar.gz 9.tar.gz linux-4.13.tar.gz
 
+long_functions:
+    compress_block
+    copy_block
+    send_bits
+    ct_tally
+    fill_window
+    inflate_codes
+    flush_block
+    init_block
+    flush_window
+    write_error
+    updcrc
+    bi_init
+    huft_build
+    inflate_dynamic
+    deflate
+    build_tree
+    longest_match
+    inflate_fixed
+    pqdownheap
+    gen_codes
+    scan_tree
+    bi_reverse
+    send_tree
+    rpl_free
+
 functions:
     openat_proc_name
     last_component

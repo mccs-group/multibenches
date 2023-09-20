@@ -7,6 +7,47 @@ run:
 run:
     -pcd -c compressed.gsm > out.au
 
+long_functions:
+    Coefficients_0_12
+    Gsm_Long_Term_Predictor
+    APCM_inverse_quantization
+    gsm_asr
+    gsm_asl
+    Short_term_analysis_filtering
+    Decoding_of_the_coded_Log_Area_Ratios
+    Gsm_Short_Term_Synthesis_Filter
+    gsm_add
+    gsm_create
+    Gsm_Long_Term_Synthesis_Filtering
+    linear_input
+    Gsm_RPE_Encoding
+    Gsm_Preprocess
+    gsm_norm
+    gsm_encode
+    ulaw_input
+    gsm_debug_word
+    gsm_mult
+    APCM_quantization_xmaxc_to_exp_mant
+    process_encode
+    Gsm_Coder
+    Gsm_RPE_Decoding
+    Gsm_Decoder
+    Gsm_Short_Term_Analysis_Filter
+    gsm_L_asr
+    LARp_to_rp
+    Coefficients_27_39
+    Gsm_LPC_Analysis
+    gsm_L_asl
+    Short_term_synthesis_filtering
+    gsm_sub
+    RPE_grid_positioning
+    gsm_decode
+    gsm_div
+    process_decode
+    main1
+    gsm_print
+    ulaw_output
+
 functions:
     gsm_add
     gsm_sub

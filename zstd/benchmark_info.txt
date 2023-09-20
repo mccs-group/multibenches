@@ -28,6 +28,58 @@ run:
 run:
     -fd *.zst
 
+long_functions:
+    ZSTD_ldm_blockCompress
+    ZSTD_selectEncodingType
+    ZSTD_compressBlock_lazy_extDict_row
+    ZSTD_btGetAllMatches_extDict_3
+    ZSTD_count_2segments
+    ZSTD_count
+    ZSTD_decodeLiteralsBlock
+    HUF_simpleQuickSort
+    FSE_readNCount_body_default
+    ZSTD_scaleStats
+    ZSTD_compressBlock_lazy2_extDict_row
+    ZSTD_compressBlock_btlazy2
+    ZSTD_compressContinue_internal
+    ZSTD_RowFindBestMatch_extDict_5_5
+    ZSTD_setBasePrices
+    ZSTD_updateStats
+    FSE_writeNCount
+    UTIL_clockSpanNano
+    HUF_compress_internal
+    HUF_buildCTable_wksp
+    ZSTD_compressBlock_lazy2_row
+    HUF_optimalTableLog
+    ZSTD_safecopyLiterals
+    ZSTD_encodeSequences
+    HIST_count_simple
+    ZSTD_HcFindBestMatch_dictMatchState_5
+    ZSTD_insertBt1
+    ZSTD_deriveSeqStoreChunk
+    ZSTD_seqToCodes
+    ZSTD_compressBlock_opt2
+    ZSTD_decodeSeqHeaders
+    HUF_decompress4X2_usingDTable_internal
+    ZSTD_DUBT_findBestMatch
+    ZSTD_btGetAllMatches_noDict_3
+    ZSTD_insertAndFindFirstIndexHash3
+    ZSTD_compressBlock_fast
+    ZSTD_RowFindBestMatch_extDict_5_4
+    ZSTD_litLengthPrice
+    FSE_buildCTable_wksp
+    ZSTD_compressBlock_doubleFast_extDict_generic
+    ZSTD_BtFindBestMatch_extDict_5
+    ZSTD_copyCDictTableIntoCCtx
+    ZSTD_compressBlock_btlazy2_extDict
+    ZSTD_XXH64_update
+    ZSTD_buildBlockEntropyStats
+    ZSTD_RowFindBestMatch_noDict_5_4
+    ZSTD_RowFindBestMatch_noDict_5_5
+    ZSTD_compressBlock_doubleFast
+    ZSTD_BtFindBestMatch_noDict_5
+    HIST_count_parallel_wksp
+
 functions:
     FSE_getErrorName
     ERR_getErrorString

@@ -1,6 +1,11 @@
 build:
     reedsolomon.c -w
 
+long_functions:
+    rsdec_204
+    rsenc_204
+    decode_rs
+
 functions:
     generate_gf
     gen_poly

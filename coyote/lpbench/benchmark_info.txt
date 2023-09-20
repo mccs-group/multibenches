@@ -1,6 +1,11 @@
 build:
     lpbench.c
 
+long_functions:
+    dgefa
+    matgen
+    daxpy
+
 functions:
     idamax
     matgen

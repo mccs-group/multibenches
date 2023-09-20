@@ -1,6 +1,11 @@
 build:
     poisson.c -w -lm
 
+long_functions:
+    jacobi
+    mat_set_init
+    mat_set
+
 functions:
     set_param
     clearMat

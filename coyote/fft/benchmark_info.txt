@@ -1,6 +1,13 @@
 build:
     fftbench.cpp -lm -lstdc++
 
+long_functions:
+    _ZL13random_doublev
+    _ZN10polynomialIdE3fftERKS0_
+    _ZN10polynomialIdE11inverse_fftERKS_ISt7complexIdEE
+    __muldc3
+    _ZNK10polynomialIdEmlERKS0_
+
 functions:
     _ZL13random_doublev
     _ZN10polynomialIdED1Ev

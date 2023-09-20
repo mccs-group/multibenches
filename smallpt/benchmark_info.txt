@@ -1,6 +1,10 @@
 build:
     smallpt.cpp -lstdc++ -lm -w
     
+long_functions:
+    _Z8radianceRK3RayiPt
+    _ZN3Vec4normEv
+    
 functions:
     _ZN3Vec4normEv
     _Z8radianceRK3RayiPt
