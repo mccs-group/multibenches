@@ -81,3 +81,18 @@ Some kind of parser written in c++.
 
 From cBench v1.1 automotive.
 Image processing (smoothing, edge and corner detection).
+
+### SPEC2017 525.x264 (552 functions)
+
+SPEC2017 benchmark.
+x264 video codec.
+
+### SPEC2017 557xz (395 functions)
+
+SPEC2017 benchmark.
+Compression library.
+
+### SPEC2017 544nab (261 functions)
+
+SPEC2017 benchmark.
+Molecular modeling application.
