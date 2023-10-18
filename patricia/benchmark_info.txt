@@ -1,0 +1,12 @@
+build:
+    -lm *.c
+
+run:
+    1.udp > output_large.txt
+
+functions:
+    pat_remove
+    pat_search
+    main
+    main1
+    pat_insert

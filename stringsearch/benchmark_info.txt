@@ -1,0 +1,17 @@
+build:
+    -DUNIX -DPORTABLE -lm *.c
+
+run:
+    1.txt 1.s.txt output.txt > ftmp.out
+
+functions:
+	bmha_init
+	bmha_search
+	bhmi_cleanup
+	bmhi_init
+	bmhi_search
+	bmh_init
+	bmh_search
+	init_search
+	strsearch
+	main

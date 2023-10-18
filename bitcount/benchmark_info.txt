@@ -1,0 +1,27 @@
+build:
+    -lm *.c
+
+run:
+    1125000 > ftmp_out
+
+functions:
+	alloc_bit_array
+    getbit
+    setbit
+    flipbit
+    bit_count
+    bitcount
+    ntbl_bitcount
+    BW_btbl_bitcount
+    AR_btbl_bitcount
+    ntbl_bitcnt
+    btbl_bitcnt
+    bit_shifter
+    main1
+    bfopen
+    bfread
+    bfwrite
+    bfclose
+    bitstring
+    bstr_i
+    main
